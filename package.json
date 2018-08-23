@@ -21,6 +21,11 @@
     "pack": "npm run build",
     "count": "node scripts/count.js"
   },
+  "cdn": {
+    "server": "static:/data0/webservice/static",
+    "host": "http://47.104.190.70",
+    "path": "/test"
+  },
   "babel": {
     "presets": [
       "react-app"
