@@ -8,6 +8,11 @@ import Keywords from '../Keywords';
 import Info from '../Info';
 import Share from '../Share';
 import { withForm } from 'react-formutil';
+import config from '../config';
+
+const { keywords, cars } = config;
+
+console.log(cars);
 
 @withForm
 class App extends Component {
@@ -17,8 +22,11 @@ class App extends Component {
                 <MySwiper>
                     <Home />
                     <Advertise />
-                    <Cars />
-                    <Keywords />
+                    <Cars dataSource={cars.slice(0, 8)} />
+                    <Cars dataSource={cars.slice(8, 16)} />
+                    <Keywords dataSource={keywords.slice(0, 8)} />
+                    <Keywords dataSource={keywords.slice(8, 16)} />
+                    <Keywords dataSource={keywords.slice(16, 24)} />
                     <Info />
                     <Share />
                 </MySwiper>

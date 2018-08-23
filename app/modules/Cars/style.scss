@@ -1,0 +1,41 @@
+.cars {
+    padding: 0.14rem 0.44rem;
+    box-sizing: border-box;
+    header {
+        display: flex;
+        align-items: center;
+        .logo {
+            display: block;
+            margin-right: 0.14rem;
+            width: 0.48rem;
+            height: 0.6rem;
+            background: url("~static/images/logo.png") top left no-repeat;
+            background-size: cover;
+        }
+        p {
+            color: #DC2439;
+            font-size: 0.14rem;
+        }
+    }
+    .cars-box {
+        margin-top: 0.2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .car {
+            margin-bottom: 0.1rem;
+            text-align: center;
+            &-img {
+                display: block;
+                width: 1.27rem;
+                height: 0.84rem;
+            }
+            &-label {
+                display: block;
+                margin-top: 0.1rem;
+                font-size: 0.11rem;
+                color: #02071C;
+            }
+        }
+    }
+}
