@@ -4,7 +4,7 @@
 @import './mixins/reactive';
 
 // 如果是移动端页面，需要使用 rem，可以取消下面一行注释
-// @import './modules/rem';
+@import './modules/rem';
 @import './modules/common';
 @import './modules/buttons';
 @import './modules/forms';
