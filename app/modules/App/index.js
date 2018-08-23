@@ -14,7 +14,7 @@ const { keywords, cars } = config;
 
 class App extends Component {
     state = {
-        toShare: false
+        toShare: true
     };
 
     submit = () => {
