@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './style.scss';
 import MySwiper from 'components/Swiper';
 import Home from '../Home';
@@ -35,13 +35,33 @@ class App extends Component {
                     <MySwiper>
                         <Home />
                         <Advertise />
-                        <Field name="car">
-                            <Cars dataSource={cars.slice(0, 8)} />
-                            <Cars dataSource={cars.slice(8, 16)} />
+                        <Field
+                            name="car"
+                            required
+                            validMessage={{
+                                required: '请选择车型'
+                            }}>
+                            {props => (
+                                <Fragment>
+                                    <Cars FieldProps={props} showTitle dataSource={cars.slice(0, 8)} />
+                                    <Cars FieldProps={props} dataSource={cars.slice(8, 16)} />
+                                </Fragment>
+                            )}
                         </Field>
-                        <Keywords dataSource={keywords.slice(0, 8)} />
-                        <Keywords dataSource={keywords.slice(8, 16)} />
-                        <Keywords dataSource={keywords.slice(16, 24)} />
+                        <Field
+                            name="keyword"
+                            required
+                            validMessage={{
+                                required: '请选择关键词'
+                            }}>
+                            {props => (
+                                <Fragment>
+                                    <Keywords FieldProps={props} showTitle dataSource={keywords.slice(0, 8)} />
+                                    <Keywords FieldProps={props} dataSource={keywords.slice(8, 16)} />
+                                    <Keywords FieldProps={props} dataSource={keywords.slice(16, 24)} />
+                                </Fragment>
+                            )}
+                        </Field>
                         <Info onSubmit={this.submit} />
                     </MySwiper>
                 )}

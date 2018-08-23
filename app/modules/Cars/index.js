@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import './style.scss';
 import Arrow from 'components/Arrow';
-import { connect } from 'react-formutil';
 
-@connect
 class Keywords extends Component {
     render() {
-        const { dataSource } = this.props;
+        const { dataSource, showTitle, FieldProps } = this.props;
 
         return (
             <div className="swiper-slide cars">
-                <header>
+                <header style={{ visibility: showTitle ? 'initial' : 'hidden' }}>
                     <span className="logo" />
                     <p className="question">你最难忘的东风日产车型是哪辆？</p>
                 </header>
@@ -19,7 +17,11 @@ class Keywords extends Component {
                         <li className="car" key={index}>
                             <img className="car-img" src={item.img} alt="car" />
                             <label className="car-label">
-                                <input type="radio" name="car" value={item.id} />
+                                <input
+                                    type="radio"
+                                    name={FieldProps.$name}
+                                    onChange={ev => FieldProps.$render(item.label)}
+                                />
                                 {item.label}
                             </label>
                         </li>

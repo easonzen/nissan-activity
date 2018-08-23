@@ -1,0 +1,23 @@
+.upload-image {
+    .upload-label {
+        color: #333333;
+        font-size: 0.14rem;
+    }
+
+    .upload-icon {
+        display: block;
+        width: 0.6rem;
+        height: 0.6rem;
+        background: url('~static/images/upload-icon.png') center no-repeat;
+        background-size: cover;
+    }
+
+    .preview {
+        width: 0.6rem;
+        height: 0.6rem;
+    }
+
+    .reUpload-btn {
+        outline: none;
+    }
+}

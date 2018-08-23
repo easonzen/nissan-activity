@@ -1,11 +1,42 @@
 import React, { Component } from 'react';
 import './style.scss';
-import { connect, Field } from 'react-formutil';
+import { connect, Field, EasyField } from 'react-formutil';
+import withToast from 'utils/withToast';
+import FieldFile from 'components/FieldFile';
+import http from 'utils/http';
 
 @connect
 class Info extends Component {
     onClick = () => {
-        this.props.onSubmit();
+        const { $formutil } = this.props;
+        const { $params, $invalid, $errors } = $formutil;
+
+        if ($invalid) {
+            const firstError = Object.values(Object.values($errors)[0])[0];
+            this.props.showToast(firstError);
+        } else {
+            let postArr = [];
+
+            for (let item in $params) {
+                if (item) {
+                    postArr.push({
+                        key: item,
+                        val: $params[item]
+                    });
+                }
+            }
+
+            http
+                .post('http://39.106.221.165/app/app-put/44/890D05A417BE05A0', JSON.stringify(postArr), {
+                    useJson: true
+                })
+                .then(resp => {
+                    this.props.onSubmit();
+                })
+                .catch(err => {
+                    this.props.showToast(err.error_msg);
+                });
+        }
     };
 
     render() {
@@ -16,52 +47,46 @@ class Info extends Component {
                     <p className="question">填写你的信息／获得定制T恤?</p>
                 </header>
                 <span className="example-img" />
-                <Field name="congratulation" required $validators={this.$validators}>
-                    {props => (
-                        <div className="congratulation">
-                            <label className="congratulation-label">1000万整车产量达成你想说</label>
-                            <input
-                                type="text"
-                                className="congratulation-input"
-                                placeholder="请填写对自己的祝福语"
-                                value={props.$value}
-                                onChange={ev => props.$render(ev.target.value.trim())}
-                            />
-                        </div>
-                    )}
-                </Field>
-                <Field name="pic" required $validators={this.$validators}>
-                    {props => (
-                        <div className="pic">
-                            <label className="pic-label">请上传你的照片</label>
-                            <div className="upload">
-                                <div className="upload-layer" />
-                                <input type="file" className="upload-input" />
-                            </div>
-                        </div>
-                    )}
-                </Field>
-                <Field name="name" required $validators={this.$validators}>
-                    {props => (
-                        <div className="name">
-                            <input type="text" className="name-input" placeholder="请输入你的名字" />
-                        </div>
-                    )}
-                </Field>
-                <Field name="tel" required $validators={this.$validators}>
-                    {props => (
-                        <div className="tel">
-                            <input type="text" className="tel-input" placeholder="请输入你的电话" />
-                        </div>
-                    )}
-                </Field>
-                <Field name="address" required $validators={this.$validators}>
-                    {props => (
-                        <div className="address">
-                            <input type="text" className="address-input" placeholder="请输入你的地址" />
-                        </div>
-                    )}
-                </Field>
+                <div className="congratulation">
+                    <label className="congratulation-label">1000万整车产量达成你想说</label>
+                    <EasyField
+                        autoComplete="off"
+                        className="congratulation-input"
+                        name="congratulation"
+                        required
+                        placeholder="请填写对自己的祝福语"
+                        validMessage={{ required: '请填写您对自己的祝福语' }}
+                    />
+                </div>
+                <div className="upload-container">
+                    <FieldFile
+                        name="avatar"
+                        required
+                        $validators={{
+                            required: value => !!value || '请选择您的头像'
+                        }}
+                    />
+                </div>
+                <div className="name">
+                    <EasyField
+                        autoComplete="off"
+                        className="name-input"
+                        name="name"
+                        required
+                        placeholder="请输入您的姓名"
+                        validMessage={{ required: '请填写您的姓名' }}
+                    />
+                </div>
+                <div className="tel">
+                    <EasyField
+                        autoComplete="off"
+                        className="tel-input"
+                        name="tel"
+                        required
+                        placeholder="请输入您的电话"
+                        validMessage={{ required: '请填写您的电话' }}
+                    />
+                </div>
                 <button className="submit-btn" type="button" onClick={this.onClick}>
                     提交
                 </button>
@@ -70,4 +95,4 @@ class Info extends Component {
     }
 }
 
-export default Info;
+export default withToast(Info);

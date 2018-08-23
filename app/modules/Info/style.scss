@@ -9,11 +9,11 @@
             margin-right: 0.14rem;
             width: 0.48rem;
             height: 0.6rem;
-            background: url("~static/images/logo.png") top left no-repeat;
+            background: url('~static/images/logo.png') top left no-repeat;
             background-size: cover;
         }
         p {
-            color: #DC2439;
+            color: #dc2439;
             font-size: 0.14rem;
         }
     }
@@ -22,7 +22,7 @@
         margin: 0.05rem auto 0;
         width: 2.87rem;
         height: 1.82rem;
-        background: url("~static/images/example.png") top left no-repeat;
+        background: url('~static/images/example.png') top left no-repeat;
         background-size: cover;
     }
     .congratulation {
@@ -35,52 +35,25 @@
             display: block;
             width: 100%;
             height: 0.36rem;
-            background: #F6F6F6;
+            background: #f6f6f6;
             padding: 0.05rem 0.15rem;
             box-sizing: border-box;
             border: 0;
             outline: none;
         }
     }
-    .pic {
+    .upload-container {
         margin-top: 0.13rem;
-        &-label {
-            color: #333333;
-            font-size: 0.14rem;
-        }
-        .upload {
-            position: relative;
-            display: block;
-            width: 0.6rem;
-            height: 0.6rem;
-            background: url("~static/images/upload-icon.png") center no-repeat;
-            background-size: cover;
-            box-sizing: border-box;
-            border: 0;
-            outline: none;
-            &-layer {
-                position: absolute;
-                visibility: hidden;
-                width: 100%;
-                height: 100%;
-            }
-            &-input {
-                position: absolute;
-                z-index: 1;
-                visibility: hidden;
-                width: 100%;
-                height: 100%;
-            }
-        }
-        
     }
-    .name, .tel, .address {
+    .name,
+    .tel,
+    .address {
         margin-top: 0.13rem;
         &-input {
             display: block;
             width: 100%;
             height: 0.36rem;
-            background: #F6F6F6;
+            background: #f6f6f6;
             padding: 0.05rem 0.15rem;
             box-sizing: border-box;
             border: 0;
@@ -93,7 +66,7 @@
         width: 1.8rem;
         height: 0.36rem;
         color: #ffffff;
-        background: #CC2032;
+        background: #cc2032;
         border: 0;
         border-radius: 100px;
         outline: none;
