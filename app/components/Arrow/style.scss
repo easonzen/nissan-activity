@@ -1,0 +1,21 @@
+.arrow {
+    display: block;
+    position: absolute;
+    bottom: 0.14rem;
+    left: 50%;
+    margin-left: -0.07rem;
+    width: 0.14rem;
+    height: 0.16rem;
+    background: url("~static/images/down-arrow.png");
+    background-size: cover;
+    animation: down 1s infinite;
+}
+
+@keyframes down {
+    0% {
+        transform: translateY(0); 
+    }
+    100% {
+        transform: translateY(50%);
+    }
+}

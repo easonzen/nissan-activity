@@ -7,7 +7,9 @@ import Cars from '../Cars';
 import Keywords from '../Keywords';
 import Info from '../Info';
 import Share from '../Share';
+import { withForm } from 'react-formutil';
 
+@withForm
 class App extends Component {
     render() {
         return (
