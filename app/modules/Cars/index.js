@@ -7,6 +7,7 @@ import { connect } from 'react-formutil';
 class Keywords extends Component {
     render() {
         const { dataSource } = this.props;
+
         return (
             <div className="swiper-slide cars">
                 <header>
@@ -17,7 +18,10 @@ class Keywords extends Component {
                     {dataSource.map((item, index) => (
                         <li className="car" key={index}>
                             <img className="car-img" src={item.img} alt="car" />
-                            <label className="car-label">{item.label}</label>
+                            <label className="car-label">
+                                <input type="radio" name="car" value={item.id} />
+                                {item.label}
+                            </label>
                         </li>
                     ))}
                 </ul>

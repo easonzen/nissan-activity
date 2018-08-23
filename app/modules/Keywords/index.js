@@ -17,7 +17,10 @@ class Keywords extends Component {
                     {dataSource.map((item, index) => (
                         <li className="keyword" key={index}>
                             <img className="keyword-img" src={item.img} alt="keyword" />
-                            <label className="keyword-label">{item.label}</label>
+                            <label className="keyword-label">
+                                <input type="radio" name="keyword" value={item.id} />
+                                {item.label}
+                            </label>
                         </li>
                     ))}
                 </ul>

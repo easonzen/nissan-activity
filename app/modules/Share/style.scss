@@ -1,0 +1,12 @@
+.share {
+    width: 100vw;
+    height: 100vh;
+    &-img {
+        margin: 0 auto;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: #ffffff url("~static/images/share-img-demo.png") center no-repeat;
+        background-size: 100% auto;
+    }
+}

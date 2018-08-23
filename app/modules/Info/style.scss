@@ -1,0 +1,100 @@
+.info {
+    padding: 0 0.44rem;
+    box-sizing: border-box;
+    header {
+        display: flex;
+        align-items: center;
+        .logo {
+            display: block;
+            margin-right: 0.14rem;
+            width: 0.48rem;
+            height: 0.6rem;
+            background: url("~static/images/logo.png") top left no-repeat;
+            background-size: cover;
+        }
+        p {
+            color: #DC2439;
+            font-size: 0.14rem;
+        }
+    }
+    .example-img {
+        display: block;
+        margin: 0.05rem auto 0;
+        width: 2.87rem;
+        height: 1.82rem;
+        background: url("~static/images/example.png") top left no-repeat;
+        background-size: cover;
+    }
+    .congratulation {
+        margin-top: 0.13rem;
+        &-label {
+            color: #333333;
+            font-size: 0.14rem;
+        }
+        &-input {
+            display: block;
+            width: 100%;
+            height: 0.36rem;
+            background: #F6F6F6;
+            padding: 0.05rem 0.15rem;
+            box-sizing: border-box;
+            border: 0;
+            outline: none;
+        }
+    }
+    .pic {
+        margin-top: 0.13rem;
+        &-label {
+            color: #333333;
+            font-size: 0.14rem;
+        }
+        .upload {
+            position: relative;
+            display: block;
+            width: 0.6rem;
+            height: 0.6rem;
+            background: #F6F6F6;
+            box-sizing: border-box;
+            border: 0;
+            outline: none;
+            &-layer {
+                position: absolute;
+                visibility: hidden;
+                width: 100%;
+                height: 100%;
+            }
+            &-input {
+                position: absolute;
+                z-index: 1;
+                visibility: hidden;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        
+    }
+    .name, .tel, .address {
+        margin-top: 0.13rem;
+        &-input {
+            display: block;
+            width: 100%;
+            height: 0.36rem;
+            background: #F6F6F6;
+            padding: 0.05rem 0.15rem;
+            box-sizing: border-box;
+            border: 0;
+            outline: none;
+        }
+    }
+    .submit-btn {
+        display: block;
+        margin: 0.16rem auto 0;
+        width: 1.8rem;
+        height: 0.36rem;
+        color: #ffffff;
+        background: #CC2032;
+        border: 0;
+        border-radius: 100px;
+        outline: none;
+    }
+}

@@ -104,7 +104,7 @@ const cars = [
     },
     {
         img: require('../../static/images/cars/2004bluebird.png'),
-        label: '2004 BLUEBIRD蓝鸟智尊'
+        label: '2004 BLUEBIRD蓝鸟'
     },
     {
         img: require('../../static/images/cars/2005tida.png'),

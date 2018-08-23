@@ -31,10 +31,18 @@
                 height: 0.84rem;
             }
             &-label {
-                display: block;
+                display: flex;
                 margin-top: 0.1rem;
                 font-size: 0.11rem;
                 color: #02071C;
+                justify-content: start;
+                align-items: center;
+                input[type=radio] {
+                    margin: 0;
+                    margin-right: 0.05rem;
+                    border: 0;
+                    outline: none;
+                }
             }
         }
     }
