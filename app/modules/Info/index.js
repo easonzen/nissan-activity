@@ -13,7 +13,7 @@ class Info extends Component {
             <div className="swiper-slide info">
                 <header>
                     <span className="logo" />
-                    <p className="question">填写你的信息／获得东风定制T恤?</p>
+                    <p className="question">填写你的信息／获得定制T恤?</p>
                 </header>
                 <span className="example-img" />
                 <Field name="congratulation" required $validators={this.$validators}>
