@@ -16,7 +16,6 @@ class Info extends Component {
     onClick = () => {
         const { $formutil } = this.props;
         const { $params, $invalid, $errors } = $formutil;
-        const { isLoading } = this.state;
 
         if ($invalid) {
             const firstError = Object.values(Object.values($errors)[0])[0];
