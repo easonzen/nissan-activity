@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import Button from 'components/Button';
 import SharePic from 'components/SharePic';
 import qrcode from 'qrcode';
-import moment from 'moment';
-import formatPrice from 'utils/formatPrice';
-import APP from 'stores/APP';
 import { measureFontSize, measureText } from 'utils/canvasUtil';
 
 class Share extends Component {
@@ -27,19 +24,7 @@ class Share extends Component {
         this.createShare();
     }
 
-    onload = img => {
-        if (APP.isTiger) {
-            try {
-                setTimeout(() => {
-                    share.shareScreenshot();
-
-                    setTimeout(() => {
-                        this.toggle();
-                    }, 500);
-                }, 500);
-            } catch (error) {}
-        }
-    };
+    onload = img => {};
 
     createShare = async () => {
         this.setState({
@@ -47,11 +32,15 @@ class Share extends Component {
         });
 
         try {
-            let latestPrice;
             const qrlink = await qrcode.toDataURL(window.location.origin + window.location.pathname);
 
             this.setState({
                 picConfig: [
+                    {
+                        image: require('../../../static/images/logo.png'),
+                        x: 0,
+                        y: 0
+                    },
                     {
                         image: qrlink,
                         x: 624,
@@ -60,35 +49,36 @@ class Share extends Component {
                         height: 100
                     },
                     {
-                        text: moment().format('YYYY-MM-DD HH:mm:ss'),
-                        font: '20px Arial',
-                        x: 430,
-                        y: 1280,
-                        color: '#333'
+                        text: '22222222',
+                        x: 296,
+                        y: 875,
+                        font: '32px Arial',
+                        color: '#35304f'
+                    },
+                    {
+                        text: '33333333',
+                        x: 507,
+                        y: 875,
+                        font: '32px Arial',
+                        color: '#35304f'
                     },
                     {
                         text: '我在老虎证券认购了',
                         x: 64,
                         y: 100,
                         font: '46px Arial',
-                        color: '#000'
+                        color: '#fff'
                     },
                     {
-                        text: ipoData.companyName,
+                        text: '中国铁塔',
                         x: 64,
                         y: 220,
-                        font: measureFontSize('nidaye', 92, 470) + 'px Arial',
-                        color: '#000'
+                        font: measureFontSize('中国铁塔', 92, 470) + 'px Arial',
+                        color: '#fff'
                     },
                     {
-                        text: '(' + ipoData.symbol + ')',
-                        x:
-                            64 +
-                            measureText(
-                                ipoData.companyName,
-                                measureFontSize(ipoData.companyName, 92, 470) + 'px Arial'
-                            ) +
-                            20,
+                        text: '(ZGTT)',
+                        x: 64 + measureText('中国铁塔', measureFontSize('中国铁塔', 92, 470) + 'px Arial') + 20,
                         y: 220,
                         font: '50px Arial',
                         color: '#fff'
@@ -105,9 +95,13 @@ class Share extends Component {
     render() {
         return this.state.picConfig ? (
             <div className="share-pic">
+                <Button type="primary" block onClick={this.share}>
+                    分享我的认购
+                </Button>
                 <SharePic
                     in={this.state.visible}
-                    save={false}
+                    // save={!APP.isTiger}
+                    save={true}
                     onload={this.onload}
                     config={this.state.picConfig}
                     close={this.toggle}

@@ -27,7 +27,7 @@ class Info extends Component {
             }
 
             http
-                .post('http://39.106.221.165/app/app-put/44/890D05A417BE05A0', JSON.stringify(postArr), {
+                .post('http://39.106.221.165/app/app-put/44/890D05A417BE05A0', postArr, {
                     useJson: true
                 })
                 .then(resp => {
@@ -54,17 +54,18 @@ class Info extends Component {
                         className="congratulation-input"
                         name="congratulation"
                         required
+                        maxLength="17"
                         placeholder="请填写对自己的祝福语"
-                        validMessage={{ required: '请填写您对自己的祝福语' }}
+                        validMessage={{ required: '请填写您对自己的祝福语', maxLength: '最多输入17个字符' }}
                     />
                 </div>
                 <div className="upload-container">
                     <FieldFile
                         name="avatar"
-                        required
-                        $validators={{
-                            required: value => !!value || '请选择您的头像'
-                        }}
+                        // required
+                        // $validators={{
+                        //     required: value => !!value || '请选择您的头像'
+                        // }}
                     />
                 </div>
                 <div className="name">

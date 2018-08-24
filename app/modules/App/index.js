@@ -6,7 +6,7 @@ import Advertise from '../Advertise';
 import Cars from '../Cars';
 import Keywords from '../Keywords';
 import Info from '../Info';
-import Share from '../Share';
+import Result from '../Result';
 import { withForm, Field } from 'react-formutil';
 import config from '../config';
 
@@ -14,7 +14,7 @@ const { keywords, cars } = config;
 
 class App extends Component {
     state = {
-        toShare: true
+        toShare: false
     };
 
     submit = () => {
@@ -30,7 +30,7 @@ class App extends Component {
         return (
             <div className="activity-container">
                 {toShare ? (
-                    <Share />
+                    <Result />
                 ) : (
                     <MySwiper>
                         <Home />
@@ -38,8 +38,8 @@ class App extends Component {
                         <Field
                             name="car"
                             required
-                            validMessage={{
-                                required: '请选择车型'
+                            $validators={{
+                                required: value => !!value || '请选择您喜欢的车'
                             }}>
                             {props => (
                                 <Fragment>
@@ -51,8 +51,8 @@ class App extends Component {
                         <Field
                             name="keyword"
                             required
-                            validMessage={{
-                                required: '请选择关键词'
+                            $validators={{
+                                required: value => !!value || '请选择您喜欢的关键字'
                             }}>
                             {props => (
                                 <Fragment>
