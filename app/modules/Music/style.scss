@@ -1,5 +1,6 @@
 .music-icon {
     position: fixed;
+    z-index: 10;
     top: 0.2rem;
     right: 0.2rem;
     width: 0.32rem;
@@ -7,6 +8,10 @@
     background: url('~static/images/music-icon.png') top left no-repeat;
     background-size: cover;
     animation: play 5s linear infinite;
+}
+
+.paused {
+    animation-play-state: paused;
 }
 
 @keyframes play {

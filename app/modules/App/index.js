@@ -8,6 +8,7 @@ import Keywords from '../Keywords';
 import Info from '../Info';
 import { withForm, Field } from 'react-formutil';
 import config from '../config';
+import Music from '../Music';
 
 const { keywords, cars } = config;
 
@@ -15,6 +16,7 @@ class App extends Component {
     render() {
         return (
             <div className="activity-container">
+                <Music />
                 <MySwiper>
                     <Home />
                     <Advertise />
