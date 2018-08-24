@@ -6,7 +6,6 @@ import Advertise from '../Advertise';
 import Cars from '../Cars';
 import Keywords from '../Keywords';
 import Info from '../Info';
-// import Music from '../Music';
 import { withForm, Field } from 'react-formutil';
 import config from '../config';
 
@@ -16,7 +15,6 @@ class App extends Component {
     render() {
         return (
             <div className="activity-container">
-                {/* <Music /> */}
                 <MySwiper>
                     <Home />
                     <Advertise />

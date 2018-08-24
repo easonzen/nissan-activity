@@ -1,0 +1,17 @@
+.upload {
+    display: flex;
+    align-items: center;
+    .ant-upload {
+        width: 0.6rem !important;
+        height: 0.6rem !important;
+    }
+    .ant-upload-list-item-done {
+        width: 0.6rem !important;
+        height: 0.6rem !important;
+    }
+    .ant-btn {
+        background-color: #cc2032;
+        border-color: #cc2032;
+        padding: 0 0.1rem;
+    }
+}

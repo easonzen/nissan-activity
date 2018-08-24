@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import './style.scss';
 import { connect, EasyField } from 'react-formutil';
 import withToast from 'utils/withToast';
-import FieldFile from 'components/FieldFile';
+import Upload from 'components/Upload';
 import http from 'utils/http';
 import Share from 'components/Share';
 import Loading from 'components/Loading';
@@ -97,13 +97,14 @@ class Info extends Component {
                         />
                     </div>
                     <div className="upload-container">
-                        <FieldFile
+                        {/* <FieldFile
                             name="avatar_img"
-                            // required
-                            // $validators={{
-                            //     required: value => !!value || '请选择您的头像'
-                            // }}
-                        />
+                            required
+                            $validators={{
+                                required: value => !!value || '请选择您的头像'
+                            }}
+                        /> */}
+                        <Upload />
                     </div>
                     <div className="name">
                         <EasyField
