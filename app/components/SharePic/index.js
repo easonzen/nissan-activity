@@ -46,7 +46,7 @@ class SharePic extends Component {
                             'share-screenshot': !save
                         })}>
                         <CreatePic {...props} onload={this.onload}>
-                            <div className="loading">生成中...</div>
+                            <div className="loading">生成海报中...</div>
                         </CreatePic>
                         {loaded && save && <div className="tip">长按保存图片</div>}
                         {/* {save && (

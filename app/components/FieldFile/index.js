@@ -11,13 +11,15 @@ export default function FieldFile(props) {
                 const selectFile = function() {
                     const fileInput = document.createElement('input');
                     fileInput.type = 'file';
+                    fileInput.name = 'image';
+                    fileInput.accept = 'image/*';
                     fileInput.onchange = function() {
                         /* get file &upload */
                         const files = fileInput.files;
                         uploadFile(files[0]).then(
-                            ({ url }) => {
+                            resp => {
                                 //将文件地址更新到Field的状态中
-                                $props.$render(url);
+                                $props.$render(resp.data.url);
                             },
                             error => {
                                 alert('上传头像失败');

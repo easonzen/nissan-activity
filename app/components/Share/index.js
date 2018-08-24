@@ -30,6 +30,8 @@ class Share extends Component {
         const { $formutil } = this.props;
         const { $params } = $formutil;
 
+        console.log($params.avatar_img);
+
         this.setState({
             loading: true
         });
@@ -44,6 +46,13 @@ class Share extends Component {
                         width: 172,
                         height: 213,
                         x: 20,
+                        y: 0
+                    },
+                    {
+                        image: $params.avatar_img,
+                        width: 160,
+                        height: 160,
+                        x: 300,
                         y: 0
                     },
                     {

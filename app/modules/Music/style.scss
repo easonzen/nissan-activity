@@ -1,0 +1,19 @@
+.music-icon {
+    position: fixed;
+    top: 0.2rem;
+    right: 0.2rem;
+    width: 0.32rem;
+    height: 0.32rem;
+    background: url('~static/images/music-icon.png') top left no-repeat;
+    background-size: cover;
+    animation: play 5s linear infinite;
+}
+
+@keyframes play {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
