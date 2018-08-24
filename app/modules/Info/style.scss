@@ -46,6 +46,10 @@
     }
     .upload-container {
         margin-top: 0.13rem;
+        .upload-label {
+            display: block;
+            margin-bottom: 0.05rem;
+        }
     }
     .name,
     .tel,
