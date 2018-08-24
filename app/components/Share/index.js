@@ -47,7 +47,7 @@ class Share extends Component {
                         y: 0
                     },
                     {
-                        image: require(`../../../static/images/${$params.car.value}.png`),
+                        image: require(`../../../static/images/${$params.car.value}-big.png`),
                         width: 654,
                         height: 349,
                         x: 45,

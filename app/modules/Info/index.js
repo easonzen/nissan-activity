@@ -16,33 +16,33 @@ class Info extends Component {
             const firstError = Object.values(Object.values($errors)[0])[0];
             this.props.showToast(firstError);
         } else {
-            let postArr = [];
+            // let postArr = [];
 
-            for (let item in $params) {
-                if (item !== 'car') {
-                    postArr.push({
-                        key: item,
-                        val: $params[item]
-                    });
-                } else {
-                    postArr.push({
-                        key: item,
-                        val: $params[item].label
-                    });
-                }
-            }
+            // for (let item in $params) {
+            //     if (item !== 'car') {
+            //         postArr.push({
+            //             key: item,
+            //             val: $params[item]
+            //         });
+            //     } else {
+            //         postArr.push({
+            //             key: item,
+            //             val: $params[item].label
+            //         });
+            //     }
+            // }
 
-            http
-                .post('http://39.106.221.165/app/app-put/44/890D05A417BE05A0', postArr, {
-                    useJson: true
-                })
-                .then(resp => {
-                    this.shareComponent.share();
-                })
-                .catch(err => {
-                    this.props.showToast(err.error_msg);
-                });
-            // this.shareComponent.share();
+            // http
+            //     .post('http://39.106.221.165/app/app-put/44/890D05A417BE05A0', postArr, {
+            //         useJson: true
+            //     })
+            //     .then(resp => {
+            //         this.shareComponent.share();
+            //     })
+            //     .catch(err => {
+            //         this.props.showToast(err.error_msg);
+            //     });
+            this.shareComponent.share();
         }
     };
 

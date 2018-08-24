@@ -49,11 +49,11 @@ class SharePic extends Component {
                             <div className="loading">生成中...</div>
                         </CreatePic>
                         {loaded && save && <div className="tip">长按保存图片</div>}
-                        {save && (
+                        {/* {save && (
                             <span className="close" onClick={this.props.close}>
                                 X
                             </span>
-                        )}
+                        )} */}
                     </div>
                 </Portal>
             </Fade>
