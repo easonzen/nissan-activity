@@ -50,10 +50,10 @@ class Share extends Component {
                     },
                     {
                         image: $params.avatar_img,
-                        width: 160,
-                        height: 160,
-                        x: 300,
-                        y: 0
+                        width: 110,
+                        height: 110,
+                        x: 602,
+                        y: 27
                     },
                     {
                         image: require(`../../../static/images/${$params.car.value}-big.png`),
