@@ -63,7 +63,7 @@ class Share extends Component {
                         color: '#000'
                     },
                     {
-                        text: $params.congratulation || '东风日产1000万的回忆',
+                        text: $params.congratulation_txt || '东风日产1000万的回忆',
                         x: 30,
                         y: 970,
                         font: '32px Arial',
