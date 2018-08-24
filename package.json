@@ -79,7 +79,8 @@
     "react-formutil": "0.2.21",
     "react-router-dom": "4.2.2",
     "react-transition-group": "2.4.0",
-    "swiper": "^4.3.5"
+    "swiper": "^4.3.5",
+    "vconsole": "^3.2.0"
   },
   "devDependencies": {
     "address": "1.0.2",

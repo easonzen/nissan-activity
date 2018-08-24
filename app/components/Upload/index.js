@@ -26,7 +26,7 @@ class PicturesWall extends Component {
                 {$props => {
                     const handleChange = ({ fileList }) => {
                         this.setState({ fileList });
-                        if (fileList[0].response) {
+                        if (fileList && fileList[0] && fileList[0].response) {
                             $props.$render(fileList[0].response.data.url);
                         }
                     };
