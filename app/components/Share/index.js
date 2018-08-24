@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import Button from 'components/Button';
 import SharePic from 'components/SharePic';
 import qrcode from 'qrcode';
-import { measureFontSize, measureText } from 'utils/canvasUtil';
+import { connect } from 'react-formutil';
 
+@connect
 class Share extends Component {
     state = {
         visible: false,
@@ -17,16 +18,19 @@ class Share extends Component {
         });
 
     share = () => {
-        this.toggle();
+        this.createShare();
     };
 
     componentDidMount() {
-        this.createShare();
+        this.props.onShare(this);
     }
 
     onload = img => {};
 
     createShare = async () => {
+        const { $formutil } = this.props;
+        const { $params } = $formutil;
+
         this.setState({
             loading: true
         });
@@ -38,53 +42,57 @@ class Share extends Component {
                 picConfig: [
                     {
                         image: require('../../../static/images/logo.png'),
-                        x: 0,
+                        width: 172,
+                        height: 213,
+                        x: 20,
                         y: 0
                     },
                     {
+                        image: require(`../../../static/images/${$params.car.value}.png`),
+                        width: 654,
+                        height: 349,
+                        x: 45,
+                        y: 365
+                    },
+                    {
+                        text: $params.keyword || '匠心',
+                        x: 30,
+                        y: 900,
+                        font: '64px Arial',
+                        color: '#000'
+                    },
+                    {
+                        text: $params.congratulation || '东风日产1000万的回忆',
+                        x: 30,
+                        y: 970,
+                        font: '32px Arial',
+                        color: '#333333'
+                    },
+                    {
                         image: qrlink,
-                        x: 624,
-                        y: 1200,
-                        width: 100,
-                        height: 100
+                        x: 15,
+                        y: 1000,
+                        width: 150,
+                        height: 150
                     },
                     {
-                        text: '22222222',
-                        x: 296,
-                        y: 875,
+                        text: '“分享有机会获得东风日产',
+                        x: 166,
+                        y: 1070,
                         font: '32px Arial',
-                        color: '#35304f'
+                        color: '#333333'
                     },
                     {
-                        text: '33333333',
-                        x: 507,
-                        y: 875,
+                        text: '1000万整车产量达成纪念T恤”',
+                        x: 166,
+                        y: 1110,
                         font: '32px Arial',
-                        color: '#35304f'
-                    },
-                    {
-                        text: '我在老虎证券认购了',
-                        x: 64,
-                        y: 100,
-                        font: '46px Arial',
-                        color: '#fff'
-                    },
-                    {
-                        text: '中国铁塔',
-                        x: 64,
-                        y: 220,
-                        font: measureFontSize('中国铁塔', 92, 470) + 'px Arial',
-                        color: '#fff'
-                    },
-                    {
-                        text: '(ZGTT)',
-                        x: 64 + measureText('中国铁塔', measureFontSize('中国铁塔', 92, 470) + 'px Arial') + 20,
-                        y: 220,
-                        font: '50px Arial',
-                        color: '#fff'
+                        color: '#333333'
                     }
                 ]
             });
+
+            this.toggle();
         } catch (error) {}
 
         this.setState({
@@ -95,12 +103,8 @@ class Share extends Component {
     render() {
         return this.state.picConfig ? (
             <div className="share-pic">
-                <Button type="primary" block onClick={this.share}>
-                    分享我的认购
-                </Button>
                 <SharePic
                     in={this.state.visible}
-                    // save={!APP.isTiger}
                     save={true}
                     onload={this.onload}
                     config={this.state.picConfig}

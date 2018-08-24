@@ -4,6 +4,7 @@ import { connect, Field, EasyField } from 'react-formutil';
 import withToast from 'utils/withToast';
 import FieldFile from 'components/FieldFile';
 import http from 'utils/http';
+import Share from 'components/Share';
 
 @connect
 class Info extends Component {
@@ -18,10 +19,15 @@ class Info extends Component {
             let postArr = [];
 
             for (let item in $params) {
-                if (item) {
+                if (item !== 'car') {
                     postArr.push({
                         key: item,
                         val: $params[item]
+                    });
+                } else {
+                    postArr.push({
+                        key: item,
+                        val: $params[item].label
                     });
                 }
             }
@@ -31,12 +37,17 @@ class Info extends Component {
                     useJson: true
                 })
                 .then(resp => {
-                    this.props.onSubmit();
+                    this.shareComponent.share();
                 })
                 .catch(err => {
                     this.props.showToast(err.error_msg);
                 });
+            // this.shareComponent.share();
         }
+    };
+
+    onShare = shareComponent => {
+        this.shareComponent = shareComponent;
     };
 
     render() {
@@ -91,6 +102,7 @@ class Info extends Component {
                 <button className="submit-btn" type="button" onClick={this.onClick}>
                     提交
                 </button>
+                <Share onShare={this.onShare} />
             </div>
         );
     }

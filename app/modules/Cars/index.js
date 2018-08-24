@@ -20,7 +20,7 @@ class Keywords extends Component {
                                 <input
                                     type="radio"
                                     name={FieldProps.$name}
-                                    onChange={ev => FieldProps.$render(item.label)}
+                                    onChange={ev => FieldProps.$render({ value: item.value, label: item.label })}
                                 />
                                 {item.label}
                             </label>
