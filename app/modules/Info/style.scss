@@ -28,8 +28,10 @@
     .congratulation {
         margin-top: 0.13rem;
         &-label {
+            display: block;
             color: #333333;
             font-size: 0.14rem;
+            margin-bottom: 0.05rem;
         }
         &-input {
             display: block;

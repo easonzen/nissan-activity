@@ -16,12 +16,16 @@ class Keywords extends Component {
                     {dataSource.map((item, index) => (
                         <li className="car" key={index}>
                             <img className="car-img" src={item.img} alt="car" />
-                            <label className="car-label">
-                                <input
-                                    type="radio"
-                                    name={FieldProps.$name}
-                                    onChange={ev => FieldProps.$render({ value: item.value, label: item.label })}
-                                />
+                            <label htmlFor={item.label} className="label-container">
+                                <div className="radio-container">
+                                    <input
+                                        id={item.label}
+                                        type="radio"
+                                        name={FieldProps.$name}
+                                        onChange={ev => FieldProps.$render({ value: item.value, label: item.label })}
+                                    />
+                                    <label htmlFor={item.label} className="car-label" />
+                                </div>
                                 {item.label}
                             </label>
                         </li>
