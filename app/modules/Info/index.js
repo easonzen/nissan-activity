@@ -99,10 +99,10 @@ class Info extends Component {
                     <div className="upload-container">
                         <FieldFile
                             name="avatar_img"
-                            required
-                            $validators={{
-                                required: value => !!value || '请选择您的头像'
-                            }}
+                            // required
+                            // $validators={{
+                            //     required: value => !!value || '请选择您的头像'
+                            // }}
                         />
                     </div>
                     <div className="name">
