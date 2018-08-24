@@ -6,7 +6,6 @@ import Advertise from '../Advertise';
 import Cars from '../Cars';
 import Keywords from '../Keywords';
 import Info from '../Info';
-import Result from '../Result';
 import { withForm, Field } from 'react-formutil';
 import config from '../config';
 

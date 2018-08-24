@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Field } from 'react-formutil';
 import './style.scss';
 import uploadFile from './uploadFile'; //上传文件的方法
@@ -32,7 +32,7 @@ export default function FieldFile(props) {
                     <div className="upload-image">
                         <label className="upload-label">{$props.$value ? '上传成功' : '请上传您的头像'}</label>
                         {$props.$value || <i className="upload-icon" onClick={selectFile} />}
-                        {$props.$value && <img src={$props.$value} className="preview" />}
+                        {$props.$value && <img src={$props.$value} className="preview" alt="preview" />}
                         {$props.$value && (
                             <button className="reUpload-btn" onClick={selectFile}>
                                 更改图片

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './style.scss';
-import { connect, Field, EasyField } from 'react-formutil';
+import { connect, EasyField } from 'react-formutil';
 import withToast from 'utils/withToast';
 import FieldFile from 'components/FieldFile';
 import http from 'utils/http';

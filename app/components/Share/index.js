@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Button from 'components/Button';
 import SharePic from 'components/SharePic';
 import qrcode from 'qrcode';
 import { connect } from 'react-formutil';
