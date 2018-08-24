@@ -12,7 +12,23 @@ class Music extends Component {
         if (this.refs.player.paused) {
             this.refs.player.play();
         } else {
-            this.refs.player.pause();
+            if (!this.refs.player.paused && this.refs.player.readyState !== 4) {
+                console.log('1');
+                this.setState(
+                    {
+                        isPlaying: true
+                    },
+                    () => {
+                        setTimeout(() => {
+                            this.setState({
+                                isPlaying: false
+                            });
+                        }, 0);
+                    }
+                );
+            } else {
+                this.refs.player.pause();
+            }
         }
     };
 
@@ -40,7 +56,7 @@ class Music extends Component {
                     onPlay={this.onPlay}
                     onPause={this.onPause}
                     loop
-                    preload
+                    preload="auto"
                 />
                 <i className={isPlaying ? 'music-icon' : 'music-icon paused'} onClick={this.togglePlay} />
             </Fragment>
