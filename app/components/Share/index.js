@@ -49,13 +49,6 @@ class Share extends Component {
                         y: 0
                     },
                     {
-                        image: $params.avatar_img,
-                        width: 110,
-                        height: 110,
-                        x: 602,
-                        y: 27
-                    },
-                    {
                         image: require(`../../../static/images/${$params.car.value}-big.png`),
                         width: 654,
                         height: 349,
@@ -97,7 +90,19 @@ class Share extends Component {
                         font: '32px Arial',
                         color: '#333333'
                     }
-                ]
+                ].concat(
+                    $params.avatar_img
+                        ? [
+                              {
+                                  image: $params.avatar_img,
+                                  width: 110,
+                                  height: 110,
+                                  x: 602,
+                                  y: 27
+                              }
+                          ]
+                        : []
+                )
             });
 
             this.toggle();
