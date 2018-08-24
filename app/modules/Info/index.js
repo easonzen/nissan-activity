@@ -3,7 +3,7 @@ import './style.scss';
 import { connect, EasyField } from 'react-formutil';
 import withToast from 'utils/withToast';
 import FieldFile from 'components/FieldFile';
-import http from 'utils/http';
+// import http from 'utils/http';
 import Share from 'components/Share';
 import Loading from 'components/Loading';
 
@@ -21,9 +21,9 @@ class Info extends Component {
             const firstError = Object.values(Object.values($errors)[0])[0];
             this.props.showToast(firstError);
         } else {
-            this.setState({
-                isLoading: true
-            });
+            // this.setState({
+            //     isLoading: true
+            // });
 
             let postArr = [];
 
@@ -41,24 +41,24 @@ class Info extends Component {
                 }
             }
 
-            http
-                .post('http://39.106.221.165/app/app-put/44/890D05A417BE05A0', postArr, {
-                    useJson: true
-                })
-                .then(
-                    resp => {
-                        this.shareComponent.share();
-                    },
-                    err => {
-                        this.props.showToast(err.error_msg);
-                    }
-                )
-                .then(() => {
-                    this.setState({
-                        isLoading: false
-                    });
-                });
-            // this.shareComponent.share();
+            // http
+            //     .post('http://39.106.221.165/app/app-put/44/890D05A417BE05A0', postArr, {
+            //         useJson: true
+            //     })
+            //     .then(
+            //         resp => {
+            //             this.shareComponent.share();
+            //         },
+            //         err => {
+            //             this.props.showToast(err.error_msg);
+            //         }
+            //     )
+            //     .then(() => {
+            //         this.setState({
+            //             isLoading: false
+            //         });
+            //     });
+            this.shareComponent.share();
         }
     };
 

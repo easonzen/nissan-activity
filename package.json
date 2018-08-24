@@ -23,8 +23,8 @@
   },
   "cdn": {
     "server": "static:/data0/webservice/static",
-    "host": "http://47.104.190.70",
-    "path": "/test"
+    "host": "http://dongfeng.shandong-car.com/",
+    "path": ""
   },
   "babel": {
     "presets": [

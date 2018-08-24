@@ -20,7 +20,7 @@ export default function FieldFile(props) {
                                 $props.$render(url);
                             },
                             error => {
-                                alert('上传图片失败');
+                                alert('上传头像失败');
                             }
                         );
                     };
@@ -31,7 +31,7 @@ export default function FieldFile(props) {
                 return (
                     <div className="upload-image">
                         <label className="upload-label">{$props.$value ? '上传成功' : '请上传您的头像'}</label>
-                        {$props.$value || <i className="upload-icon" onClick={selectFile} />}
+                        {!$props.$value && <i className="upload-icon" onClick={selectFile} />}
                         {$props.$value && <img src={$props.$value} className="preview" alt="preview" />}
                         {$props.$value && (
                             <button className="reUpload-btn" onClick={selectFile}>

@@ -54,7 +54,7 @@ class Share extends Component {
                         y: 365
                     },
                     {
-                        text: $params.keyword || '匠心',
+                        text: $params.keyword.label || '匠心',
                         x: 30,
                         y: 900,
                         font: '64px Arial',
