@@ -9,12 +9,35 @@
     background-size: cover;
 }
 
-.animation {
+.play {
     animation: play 5s linear infinite;
+    -webkit-animation: play 5s linear infinite;
+    -moz-animation: play 5s linear infinite;
 }
 
 @keyframes play {
     100% {
         transform: rotate(1turn);
+        -webkit-transform: rotate(1turn);
+        -moz-transform: rotate(1turn);
+        -ms-transform: rotate(1turn);
+    }
+}
+
+@-webkit-keyframes play {
+    100% {
+        transform: rotate(1turn);
+        -webkit-transform: rotate(1turn);
+        -moz-transform: rotate(1turn);
+        -ms-transform: rotate(1turn);
+    }
+}
+
+@-moz-keyframes play {
+    100% {
+        transform: rotate(1turn);
+        -webkit-transform: rotate(1turn);
+        -moz-transform: rotate(1turn);
+        -ms-transform: rotate(1turn);
     }
 }

@@ -5,14 +5,17 @@ import withToast from 'utils/withToast';
 
 class Music extends Component {
     state = {
-        isPlaying: false
+        isPlay: false,
+        hasPlay: false
     };
 
     componentDidMount() {
         if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent) && /MicroMessenger/i.test(navigator.userAgent)) {
             window.document.addEventListener('WeixinJSBridgeReady', () => {
-                this.refs.player.play();
-                this.refs.player.pause();
+                try {
+                    this.refs.player.play();
+                    // this.refs.player.pause();
+                } catch (error) {}
             });
         }
     }
@@ -25,12 +28,12 @@ class Music extends Component {
                 this.props.showToast('音乐正在加载中...');
                 this.setState(
                     {
-                        isPlaying: true
+                        isPlay: true
                     },
                     () => {
                         setTimeout(() => {
                             this.setState({
-                                isPlaying: false
+                                isPlay: false
                             });
                         }, 500);
                     }
@@ -43,39 +46,51 @@ class Music extends Component {
 
     onPlay = () => {
         this.setState({
-            isPlaying: true
+            isPlay: true,
+            hasPlay: true
         });
-        let icon = this.refs.icon;
-        icon.classList.add('animation');
+        // let icon = this.refs.icon;
+        // icon.classList.add('animation');
     };
 
     onPause = () => {
         this.setState({
-            isPlaying: false
+            isPlay: false
         });
         // let container = this.refs.container;
-        let icon = this.refs.icon;
+        // let icon = this.refs.icon;
         // let iTransform = getComputedStyle(icon).transform;
         // let cTransform = getComputedStyle(container).transform;
         // container.style.transform = cTransform === 'none' ? iTransform : iTransform.concat(' ', cTransform);
-        icon.classList.remove('animation');
+        // icon.classList.remove('animation');
     };
 
     render() {
+        const { isPlay, hasPlay } = this.state;
         return (
             <Fragment>
-                <audio
-                    id="player"
-                    src={BGM}
-                    autoPlay
-                    ref="player"
-                    onPlay={this.onPlay}
-                    onPause={this.onPause}
-                    loop
-                    preload="auto"
-                />
                 <div className="container" ref="container">
-                    <i className="music-icon" onClick={this.togglePlay} ref="icon" />
+                    <div
+                        className={isPlay || hasPlay ? 'music-icon play' : 'music-icon'}
+                        // className="music-icon play"
+                        style={{
+                            animationPlayState: isPlay ? 'running' : 'paused',
+                            WebkitAnimationPlayState: isPlay ? 'running' : 'paused',
+                            MozAnimationPlayState: isPlay ? 'running' : 'paused'
+                        }}
+                        onClick={this.togglePlay}
+                        ref="icon">
+                        <audio
+                            id="player"
+                            src={BGM}
+                            autoPlay
+                            ref="player"
+                            onPlay={this.onPlay}
+                            onPause={this.onPause}
+                            loop
+                            preload="auto"
+                        />
+                    </div>
                 </div>
             </Fragment>
         );

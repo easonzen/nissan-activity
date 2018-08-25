@@ -2,26 +2,23 @@
     background: url('~static/images/page-bg.png') top left no-repeat;
     background-size: cover;
     text-align: center;
+    color: #606163;
+    font-size: 0.18rem;
     .first {
-        margin-top: 1.23rem;
-        line-height: 2;
-        color: #606163;
-        font-size: 0.18rem;
+        margin-top: 1rem;
     }
     .small1 {
-        margin-top: 0.6rem;
-        color: #606163;
+        margin-top: 0.65rem;
         font-size: 0.14rem;
     }
     .small2 {
-        color: #606163;
         font-size: 0.14rem;
     }
     .text {
-        // opacity: 0;
+        opacity: 0;
     }
     .show {
-        animation: show 0.5 linear forwards;
+        animation: show 0.5s linear forwards;
     }
     // .logo {
     //     position: absolute;
