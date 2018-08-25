@@ -20,7 +20,7 @@ class App extends Component {
                 <MySwiper>
                     <Home />
                     <Advertise />
-                    <Field
+                    {/* <Field
                         name="car"
                         required
                         $validators={{
@@ -32,7 +32,7 @@ class App extends Component {
                                 <Cars FieldProps={props} dataSource={cars.slice(8, 16)} />
                             </Fragment>
                         )}
-                    </Field>
+                    </Field> */}
                     <Field
                         name="keyword"
                         required

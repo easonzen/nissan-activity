@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './style.scss';
 import { Upload, Icon, Button } from 'antd';
 import { Field } from 'react-formutil';
@@ -31,23 +31,30 @@ class PicturesWall extends Component {
                         }
                     };
 
-                    const handleDelete = () => this.setState({ fileList: [] });
+                    const handleDelete = () => {
+                        this.setState({ fileList: [] });
+                        $props.$render('');
+                    };
+
                     return (
-                        <div className="clearfix upload">
-                            <Upload
-                                action="http://39.106.221.165/app/u-image/by-company/890D05A417BE05A0/1"
-                                accept="image/*"
-                                name="image"
-                                listType="picture-card"
-                                fileList={fileList}
-                                onChange={handleChange}>
-                                {fileList.length > 0 ? null : uploadButton}
-                            </Upload>
-                            {fileList.length > 0 && (
-                                <Button type="primary" onClick={handleDelete}>
-                                    删除
-                                </Button>
-                            )}
+                        <div className="upload-container">
+                            <p className="upload-label">请上传您的图片</p>
+                            <div className="clearfix upload">
+                                <Upload
+                                    action="http://39.106.221.165/app/u-image/by-company/890D05A417BE05A0/1"
+                                    accept="image/*"
+                                    name="image"
+                                    listType="picture-card"
+                                    fileList={fileList}
+                                    onChange={handleChange}>
+                                    {fileList.length > 0 ? null : uploadButton}
+                                </Upload>
+                                {fileList.length > 0 && (
+                                    <Button type="primary" onClick={handleDelete}>
+                                        删除
+                                    </Button>
+                                )}
+                            </div>
                         </div>
                     );
                 }}

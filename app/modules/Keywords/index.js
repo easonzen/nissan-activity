@@ -9,8 +9,8 @@ class Keywords extends Component {
         return (
             <div className="swiper-slide keywords">
                 <header style={{ visibility: showTitle ? 'initial' : 'hidden' }}>
-                    <span className="logo" />
-                    <p className="question">你的东风日产关键词是什么?</p>
+                    {/* <span className="logo" /> */}
+                    <p className="question">选择你的东风日产关键词</p>
                 </header>
                 <div className="keywords-box">
                     {dataSource.map((item, index) => (

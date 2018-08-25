@@ -6,14 +6,14 @@ class Music extends Component {
     state = {
         isPlaying: false
     };
+
     componentDidMount() {}
 
     togglePlay = () => {
         if (this.refs.player.paused) {
-            this.refs.player.play();
-        } else {
-            if (!this.refs.player.paused && this.refs.player.readyState !== 4) {
-                console.log('1');
+            if (this.refs.player.readyState === 4) {
+                this.refs.player.play();
+            } else {
                 this.setState(
                     {
                         isPlaying: true
@@ -23,12 +23,12 @@ class Music extends Component {
                             this.setState({
                                 isPlaying: false
                             });
-                        }, 0);
+                        }, 500);
                     }
                 );
-            } else {
-                this.refs.player.pause();
             }
+        } else {
+            this.refs.player.pause();
         }
     };
 

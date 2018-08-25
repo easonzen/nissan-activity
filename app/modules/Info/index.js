@@ -80,8 +80,8 @@ class Info extends Component {
                 {isLoading && <Loading global />}
                 <div className="swiper-slide info">
                     <header>
-                        <span className="logo" />
-                        <p className="question">填写你的信息／获得定制T恤?</p>
+                        {/* <span className="logo" /> */}
+                        <p className="question">填写你的信息／获得定制T恤</p>
                     </header>
                     <span className="example-img" />
                     <div className="congratulation">

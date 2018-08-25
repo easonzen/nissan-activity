@@ -1,44 +1,57 @@
 .advertise {
-    overflow: hidden;
-    .logo {
-        position: absolute;
-        left: 0.44rem;
-        top: 0.14rem;
-        display: block;
-        width: 0.48rem;
-        height: 0.6rem;
-        background: url("~static/images/logo.png") top left no-repeat;
-        background-size: cover;
+    background: url('~static/images/page-bg.png') top left no-repeat;
+    background-size: cover;
+    text-align: center;
+    .first-p {
+        margin-top: 1.23rem;
+        line-height: 2;
+        color: #606163;
+        font-size: 0.18rem;
     }
-    .fifteen-year {
-        margin: 0.48rem auto 0.57rem auto;
-        display: block;
-        width: 1.58rem;
-        height: 2.33rem;
-        background: url("~static/images/fifteen-year.png") top left no-repeat;
-        background-size: cover;
+    .second-p {
+        margin-top: 0.6rem;
+        color: #606163;
+        font-size: 0.14rem;
     }
-    .ads {
-        width: 3.07rem;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-around;
-        .ad {
-            display: inline-block;
-            width: 0.99rem;
-            height: 1.76rem;
-        }
-        .ad1 {
-            background: url("~static/images/ad1.png") top left no-repeat;
-            background-size: cover;
-        }
-        .ad2 {
-            background: url("~static/images/ad2.png") top left no-repeat;
-            background-size: cover;
-        }
-        .ad3 {
-            background: url("~static/images/ad3.png") top left no-repeat;
-            background-size: cover;
-        }
-    }
+    // .logo {
+    //     position: absolute;
+    //     left: 0.44rem;
+    //     top: 0.14rem;
+    //     display: block;
+    //     width: 0.48rem;
+    //     height: 0.6rem;
+    //     background: url("~static/images/logo.png") top left no-repeat;
+    //     background-size: cover;
+    // }
+    // .fifteen-year {
+    //     margin: 0.48rem auto 0.57rem auto;
+    //     display: block;
+    //     width: 1.58rem;
+    //     height: 2.33rem;
+    //     background: url("~static/images/fifteen-year.png") top left no-repeat;
+    //     background-size: cover;
+    // }
+    // .ads {
+    //     width: 3.07rem;
+    //     margin: 0 auto;
+    //     display: flex;
+    //     justify-content: space-around;
+    //     .ad {
+    //         display: inline-block;
+    //         width: 0.99rem;
+    //         height: 1.76rem;
+    //     }
+    //     .ad1 {
+    //         background: url("~static/images/ad1.png") top left no-repeat;
+    //         background-size: cover;
+    //     }
+    //     .ad2 {
+    //         background: url("~static/images/ad2.png") top left no-repeat;
+    //         background-size: cover;
+    //     }
+    //     .ad3 {
+    //         background: url("~static/images/ad3.png") top left no-repeat;
+    //         background-size: cover;
+    //     }
+    // }
 }

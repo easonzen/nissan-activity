@@ -2,8 +2,9 @@
     padding: 0 0.44rem;
     box-sizing: border-box;
     header {
-        display: flex;
-        align-items: center;
+        // display: flex;
+        // align-items: center;
+        margin-top: 0.4rem;
         .logo {
             display: block;
             margin-right: 0.14rem;
@@ -15,6 +16,7 @@
         p {
             color: #dc2439;
             font-size: 0.14rem;
+            text-align: center;
         }
     }
     .example-img {
