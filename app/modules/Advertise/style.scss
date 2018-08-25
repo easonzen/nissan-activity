@@ -2,16 +2,26 @@
     background: url('~static/images/page-bg.png') top left no-repeat;
     background-size: cover;
     text-align: center;
-    .first-p {
+    .first {
         margin-top: 1.23rem;
         line-height: 2;
         color: #606163;
         font-size: 0.18rem;
     }
-    .second-p {
+    .small1 {
         margin-top: 0.6rem;
         color: #606163;
         font-size: 0.14rem;
+    }
+    .small2 {
+        color: #606163;
+        font-size: 0.14rem;
+    }
+    .text {
+        // opacity: 0;
+    }
+    .show {
+        animation: show 0.5 linear forwards;
     }
     // .logo {
     //     position: absolute;
@@ -54,4 +64,10 @@
     //         background-size: cover;
     //     }
     // }
+}
+
+@keyframes show {
+    100% {
+        opacity: 1;
+    }
 }

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import './style.scss';
 import { Upload, Icon, Button } from 'antd';
 import { Field } from 'react-formutil';
@@ -21,7 +21,7 @@ class PicturesWall extends Component {
                 name="avatar_img"
                 required
                 $validators={{
-                    required: value => !!value || '请选择您的头像'
+                    required: value => !!value || '请选择您的图片'
                 }}>
                 {$props => {
                     const handleChange = ({ fileList }) => {

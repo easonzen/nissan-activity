@@ -7,18 +7,14 @@
     height: 0.32rem;
     background: url('~static/images/music-icon.png') top left no-repeat;
     background-size: cover;
+}
+
+.animation {
     animation: play 5s linear infinite;
 }
 
-.paused {
-    animation-play-state: paused;
-}
-
 @keyframes play {
-    0% {
-        transform: rotate(0deg);
-    }
     100% {
-        transform: rotate(360deg);
+        transform: rotate(1turn);
     }
 }
