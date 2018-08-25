@@ -3,14 +3,15 @@ import './style.scss';
 import MySwiper from 'components/Swiper';
 import Home from '../Home';
 import Advertise from '../Advertise';
-import Cars from '../Cars';
+// import Cars from '../Cars';
 import Keywords from '../Keywords';
 import Info from '../Info';
 import { withForm, Field } from 'react-formutil';
 import config from '../config';
 import Music from '../Music';
 
-const { keywords, cars } = config;
+// const { keywords, cars } = config;
+const { keywords } = config;
 
 class App extends Component {
     render() {
