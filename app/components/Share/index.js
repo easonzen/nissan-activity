@@ -42,6 +42,13 @@ class Share extends Component {
             this.setState({
                 picConfig: [
                     {
+                        image: require('../../../static/images/share-pic-bg.png'),
+                        width: 602,
+                        height: 354,
+                        x: 100,
+                        y: 940
+                    },
+                    {
                         image: require('../../../static/images/logo.png'),
                         width: 172,
                         height: 213,
@@ -49,12 +56,19 @@ class Share extends Component {
                         y: 0
                     },
                     {
-                        image: require(`../../../static/images/${$params.car.value}-big.png`),
-                        width: 654,
-                        height: 349,
-                        x: 45,
-                        y: 365
+                        text: '技术日产 人.车.生活',
+                        x: 250,
+                        y: 72,
+                        font: '28px Arial',
+                        color: '#DC2439'
                     },
+                    // {
+                    //     image: require(`../../../static/images/${$params.car.value}-big.png`),
+                    //     width: 654,
+                    //     height: 349,
+                    //     x: 45,
+                    //     y: 365
+                    // },
                     {
                         text: $params.keyword.label || '匠心',
                         x: 30,
@@ -76,29 +90,36 @@ class Share extends Component {
                         width: 150,
                         height: 150
                     },
+                    // {
+                    //     text: '“分享有机会获得东风日产',
+                    //     x: 166,
+                    //     y: 1070,
+                    //     font: '32px Arial',
+                    //     color: '#333333'
+                    // },
+                    // {
+                    //     text: '1000万整车产量达成纪念T恤”',
+                    //     x: 166,
+                    //     y: 1110,
+                    //     font: '32px Arial',
+                    //     color: '#333333'
+                    // }
                     {
-                        text: '“分享有机会获得东风日产',
+                        text: '长按识别或保存二维码',
                         x: 166,
-                        y: 1070,
+                        y: 1085,
                         font: '32px Arial',
-                        color: '#333333'
-                    },
-                    {
-                        text: '1000万整车产量达成纪念T恤”',
-                        x: 166,
-                        y: 1110,
-                        font: '32px Arial',
-                        color: '#333333'
+                        color: '#CC2032'
                     }
                 ].concat(
                     $params.avatar_img
                         ? [
                               {
                                   image: $params.avatar_img,
-                                  width: 110,
-                                  height: 110,
-                                  x: 602,
-                                  y: 27
+                                  width: 697,
+                                  height: 498,
+                                  x: 30,
+                                  y: 290
                               }
                           ]
                         : []
