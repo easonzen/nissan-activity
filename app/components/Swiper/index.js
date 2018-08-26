@@ -16,7 +16,7 @@ class MySwiper extends Component {
                         for (let i = 0; i < children.length; i++) {
                             setTimeout(function() {
                                 $(children[i]).addClass('show');
-                            }, i * 500);
+                            }, i * 1000);
                         }
                     }
                 }
