@@ -49,19 +49,19 @@ class Share extends Component {
                         y: 940
                     },
                     {
-                        image: require('../../../static/images/logo.png'),
-                        width: 172,
+                        image: require('../../../static/images/logo-txt.png'),
+                        width: 440,
                         height: 213,
                         x: 20,
                         y: 0
                     },
-                    {
-                        text: '技术日产 人·车·生活',
-                        x: 250,
-                        y: 72,
-                        font: 'bolder 28px PingFang FC',
-                        color: '#DC2439'
-                    },
+                    // {
+                    //     text: '技术日产 人·车·生活',
+                    //     x: 250,
+                    //     y: 72,
+                    //     font: 'bolder 28px PingFang FC',
+                    //     color: '#DC2439'
+                    // },
                     // {
                     //     image: require(`../../../static/images/${$params.car.value}-big.png`),
                     //     width: 654,
