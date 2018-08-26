@@ -7,7 +7,7 @@ class Home extends Component {
         return (
             <div className="swiper-slide home">
                 <span className="logo" />
-                <p className="advertise">技术日产 人.车.生活</p>
+                <p className="advertise">技术日产 人·车·生活</p>
                 <span className="memory" />
                 {/* <span className="car" />
                 <div className="content">

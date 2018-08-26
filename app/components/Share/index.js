@@ -56,10 +56,10 @@ class Share extends Component {
                         y: 0
                     },
                     {
-                        text: '技术日产 人.车.生活',
+                        text: '技术日产 人·车·生活',
                         x: 250,
                         y: 72,
-                        font: '28px Arial',
+                        font: 'bolder 28px PingFang FC',
                         color: '#DC2439'
                     },
                     // {
@@ -73,20 +73,20 @@ class Share extends Component {
                         text: $params.keyword.label || '匠心',
                         x: 30,
                         y: 900,
-                        font: '64px Arial',
-                        color: '#000'
+                        font: '60px PingFang TC',
+                        color: '#606163'
                     },
                     {
                         text: $params.congratulation_txt || '东风日产1000万的回忆',
                         x: 30,
                         y: 970,
-                        font: '32px Arial',
+                        font: '32px PingFang TC',
                         color: '#333333'
                     },
                     {
                         image: qrlink,
                         x: 15,
-                        y: 1000,
+                        y: 1150,
                         width: 150,
                         height: 150
                     },
@@ -107,8 +107,8 @@ class Share extends Component {
                     {
                         text: '长按识别或保存二维码',
                         x: 166,
-                        y: 1085,
-                        font: '32px Arial',
+                        y: 1235,
+                        font: '32px PingFang TC',
                         color: '#CC2032'
                     }
                 ].concat(
