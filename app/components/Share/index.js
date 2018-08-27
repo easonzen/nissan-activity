@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SharePic from 'components/SharePic';
 import qrcode from 'qrcode';
 import { connect } from 'react-formutil';
+import http from 'utils/http';
 
 @connect
 class Share extends Component {
@@ -24,7 +25,22 @@ class Share extends Component {
         this.props.onShare(this);
     }
 
-    onload = img => {};
+    onload = img => {
+        // const formData = new FormData();
+        // formData.append('image', img);
+        // const config = {
+        //     useJson: true
+        // };
+        // http
+        //     .post('http://39.106.221.165/app/u-image/by-company/890D05A417BE05A0/1', img, config)
+        //     .then(() => {
+        //         this.toggle();
+        //         console.log('share success');
+        //     })
+        //     .catch(err => {
+        //         console.log('share fail');
+        //     });
+    };
 
     createShare = async () => {
         const { $formutil } = this.props;
