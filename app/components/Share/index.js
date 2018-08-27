@@ -138,20 +138,19 @@ class Share extends Component {
                         font: '32px PingFang TC',
                         color: '#CC2032'
                     }
-                ]
-                // ].concat(
-                //     $params.avatar_img
-                //         ? [
-                //               {
-                //                   image: $params.avatar_img,
-                //                   width: 697,
-                //                   height: 498,
-                //                   x: 30,
-                //                   y: 290
-                //               }
-                //           ]
-                //         : []
-                // )
+                ].concat(
+                    $params.avatar_img
+                        ? [
+                              {
+                                  image: $params.avatar_img,
+                                  width: 697,
+                                  height: 498,
+                                  x: 30,
+                                  y: 290
+                              }
+                          ]
+                        : []
+                )
             });
 
             this.toggle();
