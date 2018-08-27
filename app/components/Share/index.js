@@ -26,19 +26,22 @@ class Share extends Component {
     }
 
     onload = img => {
-        // function getBlobBydataURI(dataURI, filename) {
+        // function getBlobBydataURI(dataURI) {
         //     var arr = dataURI.split(','),
         //         mime = arr[0].match(/:(.*?);/)[1],
-        //         binary = atob(arr[1]),
-        //         array = [];
-        //     for (var i = 0; i < binary.length; i++) {
-        //         array.push(binary.charCodeAt(i));
+        //         bytes = window.atob(arr[1]),
+        //         // 处理异常,将ascii码小于0的转换为大于0
+        //         ab = new ArrayBuffer(bytes.length),
+        //         // 生成视图（直接针对内存）：8位无符号整数，长度1个字节
+        //         ia = new Uint8Array(ab);
+        //     for (var i = 0; i < bytes.length; i++) {
+        //         ia[i] = bytes.charCodeAt(i);
         //     }
-        //     return new File([new Uint8Array(array)], filename, { type: mime });
+        //     return new Blob([ab], { type: mime });
         // }
         // let formData = new FormData();
-        // let $File = getBlobBydataURI(img, `test${+new Date()}`);
-        // formData.append('image', $File);
+        // let $Blob = getBlobBydataURI(img);
+        // formData.append('image', $Blob);
         // const config = {
         //     userJson: true
         // };
