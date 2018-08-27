@@ -6,6 +6,7 @@ import Upload from 'components/Upload';
 import http from 'utils/http';
 import Share from 'components/Share';
 import Loading from 'components/Loading';
+// import FieldFile from 'components/FieldFile';
 
 @connect
 class Info extends Component {

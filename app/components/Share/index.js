@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import SharePic from 'components/SharePic';
 import qrcode from 'qrcode';
 import { connect } from 'react-formutil';
-import http from 'utils/http';
+// import http from 'utils/http';
 
 @connect
 class Share extends Component {
@@ -26,13 +26,24 @@ class Share extends Component {
     }
 
     onload = img => {
-        // const formData = new FormData();
-        // formData.append('image', img);
+        // function getBlobBydataURI(dataURI, filename) {
+        //     var arr = dataURI.split(','),
+        //         mime = arr[0].match(/:(.*?);/)[1],
+        //         binary = atob(arr[1]),
+        //         array = [];
+        //     for (var i = 0; i < binary.length; i++) {
+        //         array.push(binary.charCodeAt(i));
+        //     }
+        //     return new File([new Uint8Array(array)], filename, { type: mime });
+        // }
+        // let formData = new FormData();
+        // let $File = getBlobBydataURI(img, `test${+new Date()}`);
+        // formData.append('image', $File);
         // const config = {
-        //     useJson: true
+        //     userJson: true
         // };
         // http
-        //     .post('http://39.106.221.165/app/u-image/by-company/890D05A417BE05A0/1', img, config)
+        //     .post('http://39.106.221.165/app/u-image/by-company/890D05A417BE05A0/1', formData, config)
         //     .then(() => {
         //         this.toggle();
         //         console.log('share success');
@@ -127,19 +138,20 @@ class Share extends Component {
                         font: '32px PingFang TC',
                         color: '#CC2032'
                     }
-                ].concat(
-                    $params.avatar_img
-                        ? [
-                              {
-                                  image: $params.avatar_img,
-                                  width: 697,
-                                  height: 498,
-                                  x: 30,
-                                  y: 290
-                              }
-                          ]
-                        : []
-                )
+                ]
+                // ].concat(
+                //     $params.avatar_img
+                //         ? [
+                //               {
+                //                   image: $params.avatar_img,
+                //                   width: 697,
+                //                   height: 498,
+                //                   x: 30,
+                //                   y: 290
+                //               }
+                //           ]
+                //         : []
+                // )
             });
 
             this.toggle();
